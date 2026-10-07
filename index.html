@@ -153,8 +153,24 @@ input[type=radio]{accent-color:#465b91}
   .menu-sidebar .section-menu nav{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr))}
  }
 }
+
+/* Narrow screens use a side drawer, never a menu above the document. */
+@media screen and (max-width:950px), screen and (max-height:500px){
+ .layout{display:block;padding-left:64px;padding-right:clamp(8px,2vw,24px)}
+ .menu-sidebar{position:fixed;top:max(12px,env(safe-area-inset-top));left:max(8px,env(safe-area-inset-left));width:48px;max-height:calc(100dvh - 24px);overflow:visible;z-index:100}
+ .menu-sidebar .section-menu{overflow:visible;box-shadow:0 4px 18px #20212b26;border-radius:10px}
+ .menu-sidebar .section-menu summary{height:48px;min-height:48px;width:48px;padding:12px;justify-content:center}
+ .menu-sidebar .menu-title{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+ .menu-sidebar .section-menu[open]{width:min(300px,calc(100vw - 24px));overflow:hidden}
+ .menu-sidebar .section-menu[open] summary{width:100%;justify-content:space-between;padding:12px 16px}
+ .menu-sidebar .section-menu[open] .menu-title{position:static;width:auto;height:auto;margin:0;clip-path:none;white-space:normal}
+ .menu-sidebar .section-menu[open] nav{display:flex;flex-direction:column;max-height:calc(100dvh - 84px);overflow-y:auto;overscroll-behavior:contain}
+ .menu-sidebar .section-menu[open] .menu-indicator{transform:none;font-size:0}
+ .menu-sidebar .section-menu[open] .menu-indicator:after{content:'×';font-size:24px}
+ .hero{padding:clamp(14px,3vw,28px)}
+}
 </style></head><body>
-<div class="layout"><aside class="menu-sidebar"><details class="section-menu"><summary>Explore this document <span aria-hidden="true" class="menu-indicator">+</span></summary><nav aria-label="Document sections"><a href="#section_01"><span>01</span>Purpose</a><a href="#section_02"><span>02</span>Scope And Approval Authority</a><a href="#section_03"><span>03</span>Eligibility And Good Standing</a><a href="#section_04"><span>04</span>Requested Role, Rank, And Experience Credit</a><a href="#section_05"><span>05</span>Application Information And Supporting Material</a><a href="#section_06"><span>06</span>Prior-Community Contact And Verification Notice</a><a href="#section_07"><span>07</span>Review Process And Written Decision</a><a href="#section_08"><span>08</span>Orientation And Conditional Placement</a><a href="#section_09"><span>09</span>Limitations On Transfer Benefits</a><a href="#section_10"><span>10</span>Accuracy, Misrepresentation, And Reconsideration</a><a href="#section_11"><span>11</span>Record Handling And General Notices</a><a href="#section_12"><span>12</span>Applicant Acknowledgment</a><a href="#email-application"><span>@</span>Email application instructions</a></nav></details></aside><main>
+<div class="layout"><aside class="menu-sidebar"><details class="section-menu"><summary><span class="menu-title">Document menu</span><span aria-hidden="true" class="menu-indicator">☰</span></summary><nav aria-label="Document sections"><a href="#section_01"><span>01</span>Purpose</a><a href="#section_02"><span>02</span>Scope And Approval Authority</a><a href="#section_03"><span>03</span>Eligibility And Good Standing</a><a href="#section_04"><span>04</span>Requested Role, Rank, And Experience Credit</a><a href="#section_05"><span>05</span>Application Information And Supporting Material</a><a href="#section_06"><span>06</span>Prior-Community Contact And Verification Notice</a><a href="#section_07"><span>07</span>Review Process And Written Decision</a><a href="#section_08"><span>08</span>Orientation And Conditional Placement</a><a href="#section_09"><span>09</span>Limitations On Transfer Benefits</a><a href="#section_10"><span>10</span>Accuracy, Misrepresentation, And Reconsideration</a><a href="#section_11"><span>11</span>Record Handling And General Notices</a><a href="#section_12"><span>12</span>Applicant Acknowledgment</a><a href="#email-application"><span>@</span>Email application instructions</a></nav></details></aside><main>
 <div class="hero"><img class="hero-logo" src="assets/mcrp-logo.png" alt="" width="180" height="180"><div class="eyebrow">COMMUNITY OPERATIONS / TRANSFER PROGRAM</div><h1>Transfer terms,<br>eligibility & notices</h1><p>Monroe County RP - WNY</p><span class="status">Approved</span></div>
 <dl class="metadata"><div><dt>Document Number</dt><dd>MCRP-TR-001</dd></div><div><dt>Issuing Authority</dt><dd>Office of the Governor, Monroe County RP - WNY</dd></div><div><dt>Status</dt><dd>Approved</dd></div><div><dt>Approval Timestamp</dt><dd><time datetime="2026-10-07T04:35:16-04:00">October 7, 2026 at 4:35:16 AM EDT</time></dd></div><div><dt>Effective Date</dt><dd><time datetime="2026-11-01">November 1, 2026</time></dd></div><div><dt>Applies To</dt><dd>All applicants requesting recognition of prior roleplay experience, qualifications, ranks, or positions.</dd></div></dl><div class="toolbar"><span>12 policy sections · Applicant acknowledgment</span><div class="actions"><button type="button" onclick="window.print()">Print / PDF</button><button type="button" class="primary" id="download">Download entries</button></div></div>
 <p id="message" role="status">Entries remain in this page until you download them or prepare an email. Nothing is sent automatically.</p>
@@ -202,4 +218,7 @@ document.getElementById('prepare-email').addEventListener('click',()=>{
 });
 
 document.querySelectorAll('.section-menu a').forEach(link=>link.addEventListener('click',()=>{document.querySelector('.section-menu').open=false;}));
+
+ document.addEventListener('keydown',event=>{if(event.key==='Escape'){const menu=document.querySelector('.section-menu');if(menu.open){menu.open=false;menu.querySelector('summary').focus();}}});
+ document.addEventListener('click',event=>{const menu=document.querySelector('.section-menu');if(menu.open&&!menu.contains(event.target)&&window.matchMedia('(max-width:950px), (max-height:500px)').matches)menu.open=false;});
 </script></body></html>
