@@ -125,9 +125,21 @@ input[type=radio]{accent-color:#465b91}
 @media print{.email-actions,#email-status{display:none}}
 
 .field small{display:block;font-size:12px;color:var(--muted);margin-top:6px}.optional-label{font-weight:400;color:var(--muted)}
+
+/* Accordion section menu replaces the header and sidebar navigation. */
+@media screen{.layout{grid-template-columns:minmax(0,1fr);max-width:1040px}}
+.section-menu{margin-bottom:20px;background:var(--paper);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.section-menu summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:52px;padding:16px 22px;font-size:14px;font-weight:650;color:var(--ink)}
+.section-menu summary::-webkit-details-marker{display:none}
+.section-menu summary:focus-visible{outline:3px solid #889bce;outline-offset:-4px}
+.menu-indicator{font-size:22px;font-weight:400;color:var(--teal);line-height:1}
+.section-menu[open] .menu-indicator{transform:rotate(45deg)}
+.section-menu[open] summary{border-bottom:1px solid var(--line)}
+.section-menu nav{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:4px;padding:12px;overflow:visible}
+.section-menu nav a{min-width:0;min-height:44px;flex:auto;align-items:center;padding:12px;border-radius:7px}
+@media print{.section-menu{display:none}}
 </style></head><body>
-<div class="topbar"><img class="brand-logo" src="assets/mcrp-logo.png" alt="Monroe County Roleplay logo" width="76" height="76"><div class="brand">MONROE COUNTY RP · WNY</div><small>TRANSFER PROGRAM</small></div>
-<div class="layout"><aside><h2>IN THIS DOCUMENT</h2><nav><a href="#section_01"><span>01</span>Purpose</a><a href="#section_02"><span>02</span>Scope And Approval Authority</a><a href="#section_03"><span>03</span>Eligibility And Good Standing</a><a href="#section_04"><span>04</span>Requested Role, Rank, And Experience Credit</a><a href="#section_05"><span>05</span>Application Information And Supporting Material</a><a href="#section_06"><span>06</span>Prior-Community Contact And Verification Notice</a><a href="#section_07"><span>07</span>Review Process And Written Decision</a><a href="#section_08"><span>08</span>Orientation And Conditional Placement</a><a href="#section_09"><span>09</span>Limitations On Transfer Benefits</a><a href="#section_10"><span>10</span>Accuracy, Misrepresentation, And Reconsideration</a><a href="#section_11"><span>11</span>Record Handling And General Notices</a><a href="#section_12"><span>12</span>Applicant Acknowledgment</a></nav></aside><main>
+<div class="layout"><main><details class="section-menu"><summary>Explore this document <span aria-hidden="true" class="menu-indicator">+</span></summary><nav aria-label="Document sections"><a href="#section_01"><span>01</span>Purpose</a><a href="#section_02"><span>02</span>Scope And Approval Authority</a><a href="#section_03"><span>03</span>Eligibility And Good Standing</a><a href="#section_04"><span>04</span>Requested Role, Rank, And Experience Credit</a><a href="#section_05"><span>05</span>Application Information And Supporting Material</a><a href="#section_06"><span>06</span>Prior-Community Contact And Verification Notice</a><a href="#section_07"><span>07</span>Review Process And Written Decision</a><a href="#section_08"><span>08</span>Orientation And Conditional Placement</a><a href="#section_09"><span>09</span>Limitations On Transfer Benefits</a><a href="#section_10"><span>10</span>Accuracy, Misrepresentation, And Reconsideration</a><a href="#section_11"><span>11</span>Record Handling And General Notices</a><a href="#section_12"><span>12</span>Applicant Acknowledgment</a><a href="#email-application"><span>@</span>Email application instructions</a></nav></details>
 <div class="hero"><img class="hero-logo" src="assets/mcrp-logo.png" alt="" width="180" height="180"><div class="eyebrow">COMMUNITY OPERATIONS / TRANSFER PROGRAM</div><h1>Transfer terms,<br>eligibility & notices</h1><p>Monroe County RP - WNY</p><span class="status">Approved</span></div>
 <dl class="metadata"><div><dt>Document Number</dt><dd>MCRP-TR-001</dd></div><div><dt>Issuing Authority</dt><dd>Office of the Governor, Monroe County RP - WNY</dd></div><div><dt>Status</dt><dd>Approved</dd></div><div><dt>Approval Timestamp</dt><dd><time datetime="2026-10-07T04:35:16-04:00">October 7, 2026 at 4:35:16 AM EDT</time></dd></div><div><dt>Effective Date</dt><dd>Upon approval and publication</dd></div><div><dt>Applies To</dt><dd>All applicants requesting recognition of prior roleplay experience, qualifications, ranks, or positions.</dd></div></dl><div class="toolbar"><span>12 policy sections · Applicant acknowledgment</span><div class="actions"><button type="button" onclick="window.print()">Print / PDF</button><button type="button" class="primary" id="download">Download entries</button></div></div>
 <p id="message" role="status">Entries remain in this page until you download them or prepare an email. Nothing is sent automatically.</p>
@@ -173,4 +185,6 @@ document.getElementById('prepare-email').addEventListener('click',()=>{
   window.location.href=url;
   status.textContent='Email draft requested. Review your entries, attach supporting records, and send from your email app. Nothing has been sent by this page.';
 });
+
+document.querySelectorAll('.section-menu a').forEach(link=>link.addEventListener('click',()=>{document.querySelector('.section-menu').open=false;}));
 </script></body></html>
