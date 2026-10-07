@@ -91,6 +91,28 @@ input[type=radio]{accent-color:#465b91}
 @media screen and (max-width:640px){.hero{padding-right:clamp(18px,4vw,44px)}.hero-logo{position:static;transform:none;width:110px;display:block;margin-bottom:18px}.brand-logo{width:60px;height:60px}}
 @media screen and (max-width:360px){.brand-logo{width:48px;height:48px}}
 @media print{.hero{background:white;min-height:0;padding-right:100px}.hero-logo{width:80px;right:0}.hero p,.eyebrow{color:var(--muted)}}
+
+/* Keep branding responsive to the available content width. */
+@media screen {
+  main{container-type:inline-size}
+  .hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(70px,24%);column-gap:clamp(12px,3vw,32px);row-gap:0;padding:clamp(18px,4vw,44px);min-height:0;align-items:center}
+  .hero-logo{position:static;transform:none;grid-column:2;grid-row:1 / 5;width:100%;max-width:180px;height:auto;justify-self:end;margin:0}
+  .hero>.eyebrow,.hero>h1,.hero>p,.hero>.status{grid-column:1;min-width:0}
+  .hero h1{font-size:clamp(1.65rem,4.5vw,2.625rem)}
+  .hero .status{justify-self:start;max-width:100%;white-space:normal}
+  .brand-logo{max-width:22vw;height:auto}
+  .metadata dd{overflow-wrap:anywhere}
+  @container (max-width:560px){
+    .hero{grid-template-columns:minmax(0,1fr)}
+    .hero-logo{grid-column:1;grid-row:auto;justify-self:start;width:clamp(72px,24cqi,110px);margin-bottom:18px}
+    .fields,.metadata{grid-template-columns:minmax(0,1fr)}
+    .hero h1{font-size:clamp(1.5rem,7cqi,2.1rem)}
+  }
+  @media(max-width:600px){
+    .hero{grid-template-columns:minmax(0,1fr)}
+    .hero-logo{grid-column:1;grid-row:auto;justify-self:start;width:clamp(72px,24vw,110px);margin-bottom:18px}
+  }
+}
 </style></head><body>
 <div class="topbar"><img class="brand-logo" src="assets/mcrp-logo.png" alt="Monroe County Roleplay logo" width="76" height="76"><div class="brand">MONROE COUNTY RP · WNY</div><small>TRANSFER PROGRAM</small></div>
 <div class="layout"><aside><h2>IN THIS DOCUMENT</h2><nav><a href="#section_01"><span>01</span>Purpose</a><a href="#section_02"><span>02</span>Scope And Approval Authority</a><a href="#section_03"><span>03</span>Eligibility And Good Standing</a><a href="#section_04"><span>04</span>Requested Role, Rank, And Experience Credit</a><a href="#section_05"><span>05</span>Application Information And Supporting Material</a><a href="#section_06"><span>06</span>Prior-Community Contact And Verification Notice</a><a href="#section_07"><span>07</span>Review Process And Written Decision</a><a href="#section_08"><span>08</span>Orientation And Conditional Placement</a><a href="#section_09"><span>09</span>Limitations On Transfer Benefits</a><a href="#section_10"><span>10</span>Accuracy, Misrepresentation, And Reconsideration</a><a href="#section_11"><span>11</span>Record Handling And General Notices</a><a href="#section_12"><span>12</span>Applicant Acknowledgment</a><a href="#administrative_review"><span>AR</span>Administrative Review Record</a></nav></aside><main>
