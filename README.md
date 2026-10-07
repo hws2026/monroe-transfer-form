@@ -21,7 +21,7 @@ Entries are kept in the current page only. Download them before closing or reloa
 
 ## Editing
 
-Edit `index.html` to update the text, CSS, or form behavior. The document remains marked **Draft — Pending Approval**.
+Edit `index.html` to update the text, CSS, or form behavior. The document is marked **Approved**, with its approval timestamp and issuing authority recorded in the page metadata.
 
 ## Hosting
 
