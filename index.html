@@ -138,8 +138,23 @@ input[type=radio]{accent-color:#465b91}
 .section-menu nav{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:4px;padding:12px;overflow:visible}
 .section-menu nav a{min-width:0;min-height:44px;flex:auto;align-items:center;padding:12px;border-radius:7px}
 @media print{.section-menu{display:none}}
+
+/* Side accordion navigation; stacks above content when space is limited. */
+@media screen{
+ .layout{max-width:1360px;grid-template-columns:260px minmax(0,1fr)}
+ .menu-sidebar{position:sticky;top:24px;align-self:start;max-height:calc(100dvh - 48px);overflow-y:auto}
+ .menu-sidebar .section-menu{margin:0}
+ .menu-sidebar .section-menu summary{padding:16px;font-size:13px}
+ .menu-sidebar .section-menu nav{display:flex;flex-direction:column;gap:2px;padding:8px;overflow:visible}
+ .menu-sidebar .section-menu nav a{flex:0 0 auto;width:100%;font-size:12px}
+ @media(max-width:950px),(max-height:500px){
+  .layout{grid-template-columns:minmax(0,1fr)}
+  .menu-sidebar{position:static;max-height:none;overflow:visible}
+  .menu-sidebar .section-menu nav{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr))}
+ }
+}
 </style></head><body>
-<div class="layout"><main><details class="section-menu"><summary>Explore this document <span aria-hidden="true" class="menu-indicator">+</span></summary><nav aria-label="Document sections"><a href="#section_01"><span>01</span>Purpose</a><a href="#section_02"><span>02</span>Scope And Approval Authority</a><a href="#section_03"><span>03</span>Eligibility And Good Standing</a><a href="#section_04"><span>04</span>Requested Role, Rank, And Experience Credit</a><a href="#section_05"><span>05</span>Application Information And Supporting Material</a><a href="#section_06"><span>06</span>Prior-Community Contact And Verification Notice</a><a href="#section_07"><span>07</span>Review Process And Written Decision</a><a href="#section_08"><span>08</span>Orientation And Conditional Placement</a><a href="#section_09"><span>09</span>Limitations On Transfer Benefits</a><a href="#section_10"><span>10</span>Accuracy, Misrepresentation, And Reconsideration</a><a href="#section_11"><span>11</span>Record Handling And General Notices</a><a href="#section_12"><span>12</span>Applicant Acknowledgment</a><a href="#email-application"><span>@</span>Email application instructions</a></nav></details>
+<div class="layout"><aside class="menu-sidebar"><details class="section-menu"><summary>Explore this document <span aria-hidden="true" class="menu-indicator">+</span></summary><nav aria-label="Document sections"><a href="#section_01"><span>01</span>Purpose</a><a href="#section_02"><span>02</span>Scope And Approval Authority</a><a href="#section_03"><span>03</span>Eligibility And Good Standing</a><a href="#section_04"><span>04</span>Requested Role, Rank, And Experience Credit</a><a href="#section_05"><span>05</span>Application Information And Supporting Material</a><a href="#section_06"><span>06</span>Prior-Community Contact And Verification Notice</a><a href="#section_07"><span>07</span>Review Process And Written Decision</a><a href="#section_08"><span>08</span>Orientation And Conditional Placement</a><a href="#section_09"><span>09</span>Limitations On Transfer Benefits</a><a href="#section_10"><span>10</span>Accuracy, Misrepresentation, And Reconsideration</a><a href="#section_11"><span>11</span>Record Handling And General Notices</a><a href="#section_12"><span>12</span>Applicant Acknowledgment</a><a href="#email-application"><span>@</span>Email application instructions</a></nav></details></aside><main>
 <div class="hero"><img class="hero-logo" src="assets/mcrp-logo.png" alt="" width="180" height="180"><div class="eyebrow">COMMUNITY OPERATIONS / TRANSFER PROGRAM</div><h1>Transfer terms,<br>eligibility & notices</h1><p>Monroe County RP - WNY</p><span class="status">Approved</span></div>
 <dl class="metadata"><div><dt>Document Number</dt><dd>MCRP-TR-001</dd></div><div><dt>Issuing Authority</dt><dd>Office of the Governor, Monroe County RP - WNY</dd></div><div><dt>Status</dt><dd>Approved</dd></div><div><dt>Approval Timestamp</dt><dd><time datetime="2026-10-07T04:35:16-04:00">October 7, 2026 at 4:35:16 AM EDT</time></dd></div><div><dt>Effective Date</dt><dd><time datetime="2026-11-01">November 1, 2026</time></dd></div><div><dt>Applies To</dt><dd>All applicants requesting recognition of prior roleplay experience, qualifications, ranks, or positions.</dd></div></dl><div class="toolbar"><span>12 policy sections · Applicant acknowledgment</span><div class="actions"><button type="button" onclick="window.print()">Print / PDF</button><button type="button" class="primary" id="download">Download entries</button></div></div>
 <p id="message" role="status">Entries remain in this page until you download them or prepare an email. Nothing is sent automatically.</p>
