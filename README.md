@@ -13,7 +13,7 @@ Alternatively, run `python3 -m http.server 8000` in this directory and visit htt
 - Embedded CSS and JavaScript, with no external dependencies
 - Responsive layout and section navigation
 - 12 policy sections with applicant acknowledgment
-- 12 applicant form fields
+- 13 required applicant form fields and an optional legal full name field
 - Print / PDF styling
 - Download completed entries as JSON
 
