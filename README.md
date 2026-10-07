@@ -1,6 +1,6 @@
 # Monroe County RP · WNY Transfer Form
 
-A responsive HTML form for transfer terms, eligibility, notices, applicant acknowledgment, and administrative review.
+A responsive HTML form for transfer terms, eligibility, notices, applicant acknowledgment.
 
 ## Preview
 
@@ -12,8 +12,8 @@ Alternatively, run `python3 -m http.server 8000` in this directory and visit htt
 
 - Embedded CSS and JavaScript, with no external dependencies
 - Responsive layout and section navigation
-- 12 policy sections and an administrative review record
-- 19 form fields
+- 12 policy sections with applicant acknowledgment
+- 12 applicant form fields
 - Print / PDF styling
 - Download completed entries as JSON
 
